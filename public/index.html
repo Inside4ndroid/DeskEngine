@@ -1,0 +1,121 @@
+<!-- 
+ /*
+ * Developed by Inside4ndroid Studios Ltd
+ */
+  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeskEngine</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/dropdwon.css">
+    <link rel="stylesheet" href="./css/toast.css">
+    <script defer src="./js/index.js"></script>
+    <script defer src="./js/dropdown.js"></script>
+
+</head>
+
+<body>
+    <div id="toast"></div>
+    <section id="noDrag" class="wrapper" id="homepage">
+        <div class="container" data-theme="" data-size="">
+            <div class="home_modal">
+                <div class="left">
+                    <div class="links_container">
+                        <div class="side_link active" id="homeBtn"><span>Home</span></div>
+                        <div class="side_link" id="pluginsBtn"><span>Plugins</span></div>
+                        <div class="side_link" id="wallpapersBtn"><span>Wallpapers</span></div>
+                        <div class="side_link" id="aboutBtn"><span>About</span></div>
+                    </div>
+                </div>
+                <div class="right" id="rightHome">
+                    <div class="general">
+                        <h2 class="title" id="languageText">Welcome</h2>
+                        <p>Hi, Here you can set a language. Then from the menu on the left you may load, create and edit
+                            plugins aswell as set videos desktop wallpapers.</p>
+                    </div>
+                    <div class="general">
+                        <h2 class="title" id="languageText2">Language</h2>
+                        <div class="dropdown-container">
+                            <button class="dropdown-button main-button">
+                                <span class="dropdown-title text-truncate">English</span>
+                                <span class="dropdown-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <div class="dropdown-list-container">
+                                <div class="dropdown-list-wrapper">
+                                    <ul class="dropdown-list"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other">
+                        <h2 class="title">Other</h2>
+                        <div class="toggle_options">
+                            <div class="option">
+                                <div class="toggle off" id="checkupdates"></div>
+                                <p>Auto Check For Updates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right" id="rightPlugins" style="display: none;">
+                    <div class="plugincreate">
+                        <h2 class="title" id="languageText">Create A Plugin</h2>
+                        <div class="container_002">
+                            <input type="text" id="pluginNameInput" placeholder="Enter plugin name" />
+                            <div class="general_button" id="createplugin"><span>Create</span></div>
+                        </div>
+                    </div>
+                    <div class="foundplugins">
+                        <div class="split-view">
+                            <div class="left-pane">
+                                <h2 class="title" id="languageText">Installed Plugins</h2>
+                                <div class="scrollable-wrapper">
+                                    <div id="pluginList" class="scrollable-container">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right-pane">
+                                <h2 class="title" id="selectedPluginTitle">Selected Plugin</h2>
+                                <div id="selectedPluginInfo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right" id="rightWallpapers" style="display: none;">
+                    <div class="foundwallpapers">
+                        <div class="split-view">
+                            <div class="left-pane">
+                                <h2 class="title" id="languageText">Installed wallpapers</h2>
+                                <div class="scrollable-wrapper">
+                                    <div id="wallpaperList" class="scrollable-container">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right-pane">
+                                <h2 class="title" id="selectedWallpaperTitle">Selected Wallpaper</h2>
+                                <div id="selectedWallpaperInfo">
+                                    <video width="100%" height="100%" poster="" autoplay loop>
+                                        <source id="WallpaperPreview" src="" type="video/*">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

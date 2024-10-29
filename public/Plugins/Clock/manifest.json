@@ -1,0 +1,15 @@
+{
+    "name": "Clock",
+    "version": "1.0.0",
+    "author": "AnyDock",
+    "description": "A digitial clock which display day and date.",
+    "width": 300,
+    "height": 90,
+    "frame": false,
+    "transparent": true,
+    "focusable": true,
+    "resizable": false,
+    "alwaysontop": true,
+    "positionX": 100,
+    "positionY": 100
+}

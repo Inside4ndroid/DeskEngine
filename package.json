@@ -1,0 +1,17 @@
+{
+  "name": "deskengine",
+  "version": "1.0.0",
+  "description": "A rainmeter alternative made with Electron / Html / CSS / Javascript.",
+  "main": "./main/app.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Inside4ndroid Studios Ltd",
+  "license": "GNU GPLv3",
+  "dependencies": {
+    "electron": "^29.1.2",
+    "electron-store": "^10.0.0",
+    "ini": "^5.0.0"
+  }
+}
