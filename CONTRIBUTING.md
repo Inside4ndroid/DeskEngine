@@ -1,6 +1,6 @@
 <h1>Contributing</h1>
 
-This guide is for the people who are interested in contributing to DeskEngine. It is not a complete guide yet, but it should help you get started. If you have any questions or any suggestions, please open a [issue](#).
+This guide is for the people who are interested in contributing to DeskEngine. It is not a complete guide yet, but it should help you get started. If you have any questions or any suggestions, please open a [issue](https://github.com/Inside4ndroid/DeskEngine/issues).
 
 <h2>Table of Contents</h2>
 
