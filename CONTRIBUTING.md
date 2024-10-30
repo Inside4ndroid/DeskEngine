@@ -7,11 +7,11 @@ This guide is for the people who are interested in contributing to DeskEngine. I
 - [Prerequisites](#prerequisites)
   - [Cloning the repository](#cloning-the-repository)
   - [Project structure](#project-structure)
-- [Writing a provider](#writing-a-provider)
+- [Writing a plugin](#Writing-a-plugin)
     - [Setting up the provider](#setting-up-the-provider)
-- [Updaing codebase](#updaing-codebase)
+- [Updating codebase](#updaing-codebase)
   - [Updating documentation](#updating-documentation)
-  - [Fixing a provider](#fixing-a-provider)
+  - [Adding A Plugin](#Adding-A-Plugin)
 - [Commit message](#commit-message)
 
 
