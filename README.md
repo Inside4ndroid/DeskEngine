@@ -57,6 +57,7 @@ Thank you for considering supporting my work!
 - [ ] Add ways for the user to manipulate Windows UI Customisation.
 - [ ] Add a video and/or screenshots to this repo.
 - [ ] Compile and release first windows executeable / installer
+- [ ] Add compatibilty for other platforms (currently only tested on win11 x64)
 
 ## Get in Touch
 
