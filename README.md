@@ -56,6 +56,7 @@ Thank you for considering supporting my work!
 - [ ] Create Documentaion for the help button in the system tray.
 - [ ] Add ways for the user to manipulate Windows UI Customisation.
 - [ ] Add a video and/or screenshots to this repo.
+- [ ] Compile and release first windows executeable / installer
 
 ## Get in Touch
 
