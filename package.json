@@ -1,6 +1,6 @@
 {
   "name": "deskengine",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A rainmeter alternative made with Electron / Html / CSS / Javascript.",
   "main": "./main/app.js",
   "scripts": {

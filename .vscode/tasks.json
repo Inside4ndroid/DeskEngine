@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Ensure dependencies",
+            "type": "shell",
+            "command": "if (!(Test-Path node_modules)) { echo 'Installing dependencies...'; npm install } else { echo 'Dependencies already installed.' }",
+            "problemMatcher": []
+        }
+    ]
+}
