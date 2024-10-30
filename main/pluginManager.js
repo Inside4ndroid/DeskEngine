@@ -7,17 +7,17 @@ const fs = require('fs');
 
 class PluginManager {
   constructor() {
-    this.loadedPlugins = new Map();
+    this.loadedplugins = new Map();
   }
 
   loadPlugin(pluginName) {
-    const pluginWindow = this.loadedPlugins.get(pluginName);
+    const pluginWindow = this.loadedplugins.get(pluginName);
 
     try {
       if (pluginWindow && !pluginWindow.isDestroyed()) {
         return false;
       } else {
-        const allPluginFoldersPath = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'Plugins');
+        const allPluginFoldersPath = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'plugins');
         const pluginPath = path.join(allPluginFoldersPath, pluginName);
 
         const manifestPath = path.join(pluginPath, 'manifest.json');
@@ -52,7 +52,7 @@ class PluginManager {
 
         pluginWindow.loadFile(path.join(pluginPath, 'index.html'));
 
-        this.loadedPlugins.set(pluginName, pluginWindow);
+        this.loadedplugins.set(pluginName, pluginWindow);
 
         return true;
       }
@@ -64,11 +64,11 @@ class PluginManager {
   }
 
   unloadPlugin(pluginName) {
-    const pluginWindow = this.loadedPlugins.get(pluginName);
+    const pluginWindow = this.loadedplugins.get(pluginName);
 
     if (pluginWindow && !pluginWindow.isDestroyed()) {
       pluginWindow.close();
-      this.loadedPlugins.delete(pluginName);
+      this.loadedplugins.delete(pluginName);
       return true;
     }
 

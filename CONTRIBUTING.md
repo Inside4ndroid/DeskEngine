@@ -70,7 +70,7 @@ public/
 |   └── index.js
 ├── <plugins>/
 |   └── ...
-├── Wallpapers/
+├── wallpapers/
 |   └── ...
 ├── index.html
 └── package.json

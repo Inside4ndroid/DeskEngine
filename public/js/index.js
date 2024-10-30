@@ -39,12 +39,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function activateButton(event) {
             var rightHome = document.getElementById('rightHome');
-            var rightPlugins = document.getElementById('rightPlugins');
-            var rightWallpapers = document.getElementById('rightWallpapers');
+            var rightplugins = document.getElementById('rightplugins');
+            var rightwallpapers = document.getElementById('rightwallpapers');
             var currentButton = event.target.closest('.side_link');
             rightHome.style.display = 'none';
-            rightPlugins.style.display = 'none';
-            rightWallpapers.style.display = 'none';
+            rightplugins.style.display = 'none';
+            rightwallpapers.style.display = 'none';
 
             if (!currentButton.classList.contains('active')) {
                 sidebuttons.forEach(function (el) {
@@ -58,10 +58,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         rightHome.style.display = ''
                         break;
                     case 'wallpapersBtn':
-                        rightWallpapers.style.display = ''
+                        rightwallpapers.style.display = ''
                         break;
                     case 'pluginsBtn':
-                        rightPlugins.style.display = ''
+                        rightplugins.style.display = ''
                         break;
                     case 'aboutBtn':
                         // TODO Code to show about data

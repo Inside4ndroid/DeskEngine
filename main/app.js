@@ -88,15 +88,15 @@ app.whenReady().then(() => {
     setUpDirectories()
         .then(() => {
             createWindow();
-            getPlugins();
-            getWallpapers();
+            getplugins();
+            getwallpapers();
         })
 });
 
 function setUpDirectories() {
     return new Promise((resolve, reject) => {
-        const wallpaperDir = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'Wallpapers');
-        const pluginsDir = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'Plugins');
+        const wallpaperDir = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'wallpapers');
+        const pluginsDir = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'plugins');
         const checkAndCreateDir = (dir) => {
             return new Promise((res, rej) => {
                 if (!fs.existsSync(dir)) {
@@ -148,8 +148,8 @@ function setUpDirectories() {
         Promise.all([checkAndCreateDir(wallpaperDir), checkAndCreateDir(pluginsDir)])
             .then(() => {
                 return Promise.all([
-                    copyFiles(path.join(process.cwd(), 'public', 'Wallpapers'), wallpaperDir),
-                    copyFiles(path.join(process.cwd(), 'public', 'Plugins'), pluginsDir)
+                    copyFiles(path.join(process.cwd(), 'public', 'wallpapers'), wallpaperDir),
+                    copyFiles(path.join(process.cwd(), 'public', 'plugins'), pluginsDir)
                 ]);
             })
             .then(() => {
@@ -161,8 +161,8 @@ function setUpDirectories() {
     });
 }
 
-function getWallpapers() {
-    const userDocumentsPath = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'Wallpapers');
+function getwallpapers() {
+    const userDocumentsPath = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'wallpapers');
     const supportedExtensions = ['mp4', 'webm', 'ogg', 'jpg', 'jpeg', 'png', 'gif'];
     let wallpaperData = [];
     try {
@@ -183,8 +183,8 @@ function getWallpapers() {
     appWindow.webContents.send('populatewallpapers', { wallpaperData });
 }
 
-function getPlugins() {
-    const userDocumentsPath = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'Plugins');
+function getplugins() {
+    const userDocumentsPath = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'plugins');
 
     try {
         const allPluginFolders = fs.readdirSync(userDocumentsPath);
@@ -219,7 +219,7 @@ ipcMain.on('createplugin', async (event, pluginName) => {
 });
 
 ipcMain.on('refresh', (event) => {
-    getPlugins();
+    getplugins();
 });
 
 ipcMain.on('kill-all-completed', (event) => {
@@ -228,7 +228,7 @@ ipcMain.on('kill-all-completed', (event) => {
 
 async function createPlugin(event, pluginName) {
     if (/^[a-zA-Z0-9\s]+$/.test(pluginName)) {
-        const pluginFolderPath = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'Plugins', pluginName);
+        const pluginFolderPath = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'plugins', pluginName);
 
         if (!fs.existsSync(pluginFolderPath)) {
             fs.mkdirSync(pluginFolderPath, { recursive: true });
@@ -321,7 +321,7 @@ async function createPlugin(event, pluginName) {
 
             event.reply('load-plugin-response', { success: true, Ttitle: 'Success!', Tmessage: `Plugin "${pluginName}" created successfully!` });
 
-            const allPluginFoldersPath = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'Plugins');
+            const allPluginFoldersPath = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'plugins');
             const allPluginFolders = fs.readdirSync(allPluginFoldersPath);
 
             const pluginData = allPluginFolders.map((folder) => {
@@ -394,7 +394,7 @@ ipcMain.on('edit-plugin', (event, pluginName) => {
         if (err) {
             event.reply('vscode-not-installed', { success: false, Ttitle: 'Error!', Tmessage: `Please install "Visual Studio Code" to use this feature` });
         } else {
-            const pluginFolderPath = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'Plugins', pluginName); // Update this path
+            const pluginFolderPath = path.join(process.env.USERPROFILE, 'Documents', 'DeskEngine', 'plugins', pluginName); // Update this path
             const vscodeProcess = childProcess.exec(`code -n "${pluginFolderPath}"`);
 
             vscodeProcess.on('error', (error) => {
@@ -411,7 +411,7 @@ ipcMain.on('edit-plugin', (event, pluginName) => {
 });
 
 app.on('before-quit', () => {
-    pluginManager.loadedPlugins.forEach((pluginWindow) => {
+    pluginManager.loadedplugins.forEach((pluginWindow) => {
         pluginWindow.close();
     });
 });
