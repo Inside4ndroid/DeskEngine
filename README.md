@@ -42,7 +42,7 @@ Thank you for considering supporting my work!
 
 ## Contribute
 
-- You can contribute to the growth of this application by simply forking making edits and submitting a pull request.
+- You can contribute to the growth of this application by following the [Contribution Guide Here](https://github.com/Inside4ndroid/DeskEngine/blob/main/CONTRIBUTING.md).
 
 ## TODO
 
@@ -55,6 +55,7 @@ Thank you for considering supporting my work!
 - [ ] Create the About section in the application.
 - [ ] Create Documentaion for the help button in the system tray.
 - [ ] Add ways for the user to manipulate Windows UI Customisation.
+- [ ] Add a video and/or screenshots to this repo.
 
 ## Get in Touch
 
