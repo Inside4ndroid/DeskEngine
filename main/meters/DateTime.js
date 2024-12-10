@@ -2,26 +2,26 @@
  * Developed by Inside4ndroid Studios Ltd
  */
 class DateTime {
-    static getDateInfo() {
+    static async getAllDateInfo() {
         const now = new Date();
         return now;
     }
 
-    static getCurrentTime() {
+    static async getCurrentTime() {
         const now = new Date();
         const hours = String(now.getHours()).padStart(2, '0');
         const minutes = String(now.getMinutes()).padStart(2, '0');
         return `${hours}:${minutes}`;
     }
 
-    static getToday() {
+    static async getToday() {
         const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const now = new Date();
         const dayIndex = now.getDay();
         return daysOfWeek[dayIndex];
     }
 
-    static getTimezone() {
+    static async getTimezone() {
         const now = new Date();
         const timezoneOffsetInMinutes = now.getTimezoneOffset();
         const timezoneOffsetHours = Math.abs(Math.floor(timezoneOffsetInMinutes / 60));
@@ -31,20 +31,20 @@ class DateTime {
         return timezoneString;
     }
 
-    static getMonth() {
+    static async getMonth() {
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         const now = new Date();
         const monthIndex = now.getMonth();
         return months[monthIndex];
     }
 
-    static getDayOfMonth() {
+    static async getDayOfMonth() {
         const now = new Date();
         const dayOfMonth = now.getDate();
         return dayOfMonth;
     }
 
-    static getYear() {
+    static async getYear() {
         const now = new Date();
         return now.getFullYear();
     }

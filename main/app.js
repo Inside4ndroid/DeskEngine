@@ -41,6 +41,7 @@ function createWindow() {
         {
             label: 'Help',
             click: () => {
+                // TODO this should point to the website help section.
                 shell.openExternal('https://google.com');
             },
         },
@@ -370,6 +371,7 @@ ipcMain.on('set-username', (event) => {
 });
 
 ipcMain.on('load-plugin', (event, pluginName) => {
+    console.log()
     const success = pluginManager.loadPlugin(pluginName);
 
     if (success) {
@@ -378,6 +380,8 @@ ipcMain.on('load-plugin', (event, pluginName) => {
         event.reply('load-plugin-response', { success: false, Ttitle: 'Error!', Tmessage: `Plugin "${pluginName}" already loaded!` });
     }
 });
+
+
 
 ipcMain.on('unload-plugin', (event, pluginName) => {
     const success = pluginManager.unloadPlugin(pluginName);

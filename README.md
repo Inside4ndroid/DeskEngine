@@ -30,7 +30,44 @@ Thank you for considering supporting my work!
 
 ## How To Use
 
-- This bit is coming soon once i get around to compiling a release
+Currently there is only a limited api but here is what you can currently call within your plugin's javascript.
+
+For exmples of how to use the the below api's please see the example plugins included in the /public/Plugins/ folder.
+
+# Date, Time Api
+
+- await window.api.getClockInfo('getAllDateInfo'); : Returns full date object.
+- await window.api.getClockInfo('getCurrentTime'); : Returns current time in format hh:mm.
+- await window.api.getClockInfo('getToday'); : Returns name of current day eg, Sunday.
+- await window.api.getClockInfo('getTimezone'); : Returns current timezone.
+- await window.api.getClockInfo('getMonth'); : Returns the current month eg, January.
+- await window.api.getClockInfo('getDayOfMonth'); : Returns day of the month eg, 25.
+- await window.api.getClockInfo('getYear'); : Returns the current year eg, 2024.
+
+# CPU Info Api
+
+- await window.api.getCPUInfo('total_usage'); : Returns total percentile of CPU usage.
+
+All these return there respective values so brand for example would return something like Ryzen 9 5900X 12-Core Processor.
+
+- await window.api.getCPUInfo('manufacturer');
+- await window.api.getCPUInfo('brand');
+- await window.api.getCPUInfo('vendor');
+- await window.api.getCPUInfo('family');
+- await window.api.getCPUInfo('model');
+- await window.api.getCPUInfo('stepping');
+- await window.api.getCPUInfo('revision');
+- await window.api.getCPUInfo('speed');
+- await window.api.getCPUInfo('speedMin');
+- await window.api.getCPUInfo('speedMax');
+- await window.api.getCPUInfo('cores');
+- await window.api.getCPUInfo('physicalCores');
+- await window.api.getCPUInfo('performanceCores');
+- await window.api.getCPUInfo('processors');
+- await window.api.getCPUInfo('socket');
+- await window.api.getCPUInfo('flags');
+- await window.api.getCPUInfo('virtualization');
+
 
 ## Development
 
@@ -58,6 +95,15 @@ Thank you for considering supporting my work!
 - [ ] Add a video and/or screenshots to this repo.
 - [ ] Compile and release first windows executeable / installer
 - [ ] Add compatibilty for other platforms (currently only tested on win11 x64)
+
+## NPM Dependencies Used
+
+- electron
+- electron-store
+- ini 
+- install
+- perfmon
+- systeminformation
 
 ## Get in Touch
 

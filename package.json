@@ -12,6 +12,9 @@
   "dependencies": {
     "electron": "^29.1.2",
     "electron-store": "^10.0.0",
-    "ini": "^5.0.0"
+    "ini": "^5.0.0",
+    "install": "^0.13.0",
+    "perfmon": "^0.2.0",
+    "systeminformation": "^5.23.6"
   }
 }

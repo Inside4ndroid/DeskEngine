@@ -1,7 +1,7 @@
 /*
  * Developed by Inside4ndroid Studios Ltd
  */
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async () => {
 
   let isDragging = false;
   let offsetX, offsetY;
@@ -13,22 +13,17 @@ document.addEventListener('DOMContentLoaded', function () {
     event.preventDefault();
   });
 
-  var currentTime = new Date();
-  var hours = currentTime.getHours();
-  var minutes = currentTime.getMinutes();
-  minutes = minutes < 10 ? '0' + minutes : minutes;
-
-  var timeString = hours + ':' + minutes;
+  var timeString = await window.api.getClockInfo('getCurrentTime');
   document.querySelector('.time').textContent = timeString;
 
-  var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  var dayOfWeek = daysOfWeek[currentTime.getDay()];
+  var dayOfWeek = await window.api.getClockInfo('getToday');
 
   document.querySelector('.label').textContent = dayOfWeek;
 
-  var day = currentTime.getDate();
-  var month = currentTime.getMonth() + 1;
-  var year = currentTime.getFullYear();
+  var alldata = await window.api.getClockInfo('getAllDateInfo');
+  var day = alldata.getDate();
+  var month = alldata.getMonth() + 1;
+  var year = alldata.getFullYear();
 
   day = day < 10 ? '0' + day : day;
   month = month < 10 ? '0' + month : month;

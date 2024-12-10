@@ -1,10 +1,10 @@
 {
-    "name": "Clock",
+    "name": "CPU Info",
     "version": "1.0.0",
     "author": "DeskEngine",
-    "description": "A digitial clock which display day and date.",
+    "description": "A simple cpu information display.",
     "width": 300,
-    "height": 90,
+    "height": 186,
     "frame": false,
     "transparent": true,
     "focusable": true,

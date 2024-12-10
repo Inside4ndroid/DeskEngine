@@ -3,6 +3,7 @@
  */
 const { contextBridge, ipcRenderer } = require('electron');
 const DateTime = require('./meters/DateTime');
+const SystemInfo = require('./meters/SystemInfo');
 const path = require('path');
 const { wallpaperManager } = require('./wallpaperManager');
 
@@ -228,11 +229,25 @@ function populatePluginList(pluginData) {
     });
 }
 
-
-const exposeDateTimeMethod = (method) => {
-    contextBridge.exposeInMainWorld(method, async () => {
-        return await DateTime[method]();
-    });
-};
-
-['getCurrentTime', 'getToday', 'getDateInfo', 'getTimezone', 'getMonth', 'getDayOfMonth', 'getYear'].forEach(exposeDateTimeMethod);
+contextBridge.exposeInMainWorld('api', {
+    getCPUInfo: async (arg) => {
+        try {
+            return await SystemInfo.getCPUInfo(arg);
+        } catch (error) {
+            console.error('Error calling getCPUInfo:', error);
+            throw error;
+        }
+    },
+    getClockInfo: async (method) => {
+        try {
+            if (typeof DateTime[method] === 'function') {
+                return await DateTime[method]();
+            } else {
+                throw new Error(`Method ${method} does not exist on DateTime`);
+            }
+        } catch (error) {
+            console.error('Error calling getClockInfo:', error);
+            throw error;
+        }
+    },
+});
